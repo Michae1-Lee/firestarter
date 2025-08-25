@@ -6,10 +6,13 @@ Alfa Firestarter — Это система обработки входящих �
 - **file-uploader** — загружает файлы и публикует сообщения в Kafka.
 - **file-processor** — обрабатывает файлы, читая сообщения из Kafka и обновляя их статус.
 - **file-status-processor** — слушает топик Kafka и сохраняет статусы файлов в MongoDB.
-- 
-## API
 
+  
+## API
 https://web.postman.co/workspace/My-Workspace~bb478e3f-48e3-4ed1-8901-419e031ce8c3/collection/33961830-41b67582-f717-4672-b1f1-655bd473f8a8?action=share&source=copy-link&creator=33961830
+
+## Конфиги
+https://github.com/Michae1-Lee/firestarter-configs
 
 ## Запуск
 Для запуска используется `Makefile`
