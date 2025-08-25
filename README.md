@@ -30,3 +30,4 @@ make test-all
 - Docker 
 - JDK 17+
 - Gradle (через wrapper `./gradlew` или `gradlew.bat`)
+<img width="726" height="610" alt="image" src="https://github.com/user-attachments/assets/2d490dd9-de0e-4f51-b758-3719d349759a" />
