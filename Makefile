@@ -1,165 +1,48 @@
-# Project variables
-SERVICES = idea file-processor file-status-processor file-uploader
-CONFIG_SERVER = config-server
-DOCKER_COMPOSE = docker-compose.yml
+# Кроссплатформенный Makefile
+SERVICES = file-uploader file-processor file-status-processor
+LOGS_DIR = logs
 
-.PHONY: all build build-all clean start start-local stop restart logs logs-local status help
+# Определение ОС
+ifeq ($(OS),Windows_NT)
+    DETECTED_OS := Windows
+    GRADLE_CMD := gradlew.bat
+    SLEEP := timeout /t 3 /nobreak > nul
+else
+    DETECTED_OS := $(shell uname -s)
+    GRADLE_CMD := ./gradlew
+    SLEEP := sleep 3
+endif
 
-# Default target
-all: build start
+.PHONY: start-all stop clean status help os
 
-# Build all services
-build-all:
-	@echo "Building all services..."
-	@for %%s in ($(SERVICES) $(CONFIG_SERVER)) do ( \
-		echo Building %%s... & \
-		if exist %%s ( \
-			cd %%s && call gradlew build -x test && cd .. \
-		) else ( \
-			echo Service %%s not found! \
-		) \
-	)
+os:
+	@echo "Detected OS: $(DETECTED_OS)"
+	@echo "Gradle command: $(GRADLE_CMD)"
 
-# Build specific service
-build-%:
-	@echo "Building $*..."
-	@if exist $* ( \
-		cd $* && call gradlew build -x test \
-	) else ( \
-		echo Service $* not found! \
-	)
+start-all:
+	@echo "Starting all services on $(DETECTED_OS)..."
 
-# Build with tests
-build-test-all:
-	@echo "Building all services with tests..."
-	@for %%s in ($(SERVICES) $(CONFIG_SERVER)) do ( \
-		echo Building %%s with tests... & \
-		if exist %%s ( \
-			cd %%s && call gradlew build && cd .. \
-		) else ( \
-			echo Service %%s not found! \
-		) \
-	)
+ifeq ($(DETECTED_OS),Windows)
+	@echo "Starting Windows services in separate windows..."
+	cd file-uploader && start "File Uploader" cmd /k "$(GRADLE_CMD) bootRun"
+	$(SLEEP)
+	cd file-processor && start "File Processor" cmd /k "$(GRADLE_CMD) bootRun"
+	$(SLEEP)
+	cd file-status-processor && start "File Status Processor" cmd /k "$(GRADLE_CMD) bootRun"
+else
+	@echo "Starting Unix services in background..."
+	cd file-uploader && $(GRADLE_CMD) bootRun > ../$(LOGS_DIR)/file-uploader.log 2>&1 &
+	$(SLEEP)
+	cd file-processor && $(GRADLE_CMD) bootRun > ../$(LOGS_DIR)/file-processor.log 2>&1 &
+	$(SLEEP)
+	cd file-status-processor && $(GRADLE_CMD) bootRun > ../$(LOGS_DIR)/file-status-processor.log 2>&1 &
+	@echo "Services started in background. Check logs in $(LOGS_DIR)/"
+endif
+	@echo "All services started!"
 
-# Clean all services
-clean:
-	@echo "Cleaning all services..."
-	@for %%s in ($(SERVICES) $(CONFIG_SERVER)) do ( \
-		echo Cleaning %%s... & \
-		if exist %%s ( \
-			cd %%s && call gradlew clean && cd .. \
-		) else ( \
-			echo Service %%s not found! \
-		) \
-	)
-
-# Start only config-server in Docker and local services
-start:
-	@echo "Starting config-server in Docker..."
-	docker-compose -f $(DOCKER_COMPOSE) up -d --build
-	@echo "Config-server started. Run 'make start-local' to start local services"
-
-# Start local services (without config-server)
-start-local:
-	@echo "Starting local services..."
-	@for %%s in ($(SERVICES)) do ( \
-		echo Starting %%s locally... & \
-		if exist %%s ( \
-			cd %%s && start cmd /k "call gradlew bootRun" && cd .. & \
-			timeout /t 3 /nobreak > nul \
-		) else ( \
-			echo Service %%s not found! \
-		) \
-	)
-
-# Start specific local service
-start-local-%:
-	@echo "Starting $* locally..."
-	@if exist $* ( \
-		cd $* && start cmd /k "call gradlew bootRun" \
-	) else ( \
-		echo Service $* not found! \
-	)
-
-# Stop all services
-stop:
-	@echo "Stopping Docker services..."
-	docker-compose -f $(DOCKER_COMPOSE) down
-	@echo "Stopping local services..."
-	@taskkill /f /im java.exe 2>nul || echo "No Java processes found or already stopped"
-
-# Stop only Docker services
-stop-docker:
-	@echo "Stopping Docker services..."
-	docker-compose -f $(DOCKER_COMPOSE) down
-
-# Stop only local services
-stop-local:
-	@echo "Stopping local services..."
-	@taskkill /f /im java.exe 2>nul || echo "No Java processes found or already stopped"
-
-# Restart all services
-restart: stop start
-
-# View Docker logs
-logs:
-	@echo "Showing Docker logs..."
-	docker-compose -f $(DOCKER_COMPOSE) logs -f
-
-# View local services status
-status:
-	@echo "Docker service status:"
-	docker-compose -f $(DOCKER_COMPOSE) ps
-	@echo.
-	@echo "Local Java processes:"
-	@tasklist /fi "imagename eq java.exe" 2>nul || echo "No Java processes running"
-
-# Remove all containers and volumes
-clean-docker:
-	@echo "Cleaning Docker containers and volumes..."
-	docker-compose -f $(DOCKER_COMPOSE) down -v
-
-# Run tests for all services
 test-all:
-	@echo "Running tests for all services..."
-	@for %%s in ($(SERVICES) $(CONFIG_SERVER)) do ( \
-		echo Testing %%s... & \
-		if exist %%s ( \
-			cd %%s && call gradlew test && cd .. \
-		) else ( \
-			echo Service %%s not found! \
-		) \
-	)
-
-# Run tests for specific service
-test-%:
-	@echo "Testing $*..."
-	@if exist $* ( \
-		cd $* && call gradlew test \
-	) else ( \
-		echo Service $* not found! \
-	)
-
-# Help message
-help:
-	@echo "Available commands:"
-	@echo "  make all              - Build and start all services"
-	@echo "  make build-all        - Build all services without tests"
-	@echo "  make build-<service>  - Build specific service"
-	@echo "  make clean            - Clean all services"
-	@echo "  make start            - Start config-server in Docker"
-	@echo "  make start-local      - Start local services in separate windows"
-	@echo "  make start-local-<svc>- Start specific local service"
-	@echo "  make stop             - Stop all services"
-	@echo "  make stop-docker      - Stop only Docker services"
-	@echo "  make stop-local       - Stop only local services"
-	@echo "  make restart          - Restart all services"
-	@echo "  make logs             - View Docker logs"
-	@echo "  make status           - View service status"
-	@echo "  make clean-docker     - Remove Docker containers and volumes"
-	@echo "  make test-all         - Run tests for all services"
-	@echo "  make test-<service>   - Run tests for specific service"
-	@echo "  make help             - Show this help message"
-	@echo ""
-	@echo "Local services: $(SERVICES)"
-	@echo "Docker service: $(CONFIG_SERVER)"
+	@echo "Running all tests in all services..."
+	cd file-uploader && $(GRADLE_CMD) test
+	cd file-processor && $(GRADLE_CMD) test
+	cd file-status-processor && $(GRADLE_CMD) test
+	@echo "All tests completed!"

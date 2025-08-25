@@ -25,9 +25,16 @@ dependencies {
 	implementation("org.springframework.cloud:spring-cloud-starter-config")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.kafka:spring-kafka")
+	testImplementation ("org.testcontainers:testcontainers:1.19.8")
+	testImplementation ("org.testcontainers:junit-jupiter:1.19.8")
+	testImplementation ("org.testcontainers:kafka:1.19.8")
+	testImplementation ("org.testcontainers:mongodb:1.19.8")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.kafka:spring-kafka-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+	testImplementation ("org.mockito:mockito-core:5.11.0")
+	testImplementation ("org.mockito:mockito-junit-jupiter:5.11.0")
+	testImplementation ("org.awaitility:awaitility:4.2.0")
 }
 
 dependencyManagement {

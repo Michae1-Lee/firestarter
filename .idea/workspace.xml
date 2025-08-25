@@ -4,13 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df38506c-b2f0-4cc2-aab2-aa92bc8c9ea5" name="Changes" comment="" />
+    <list default="true" id="df38506c-b2f0-4cc2-aab2-aa92bc8c9ea5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/file-uploader.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alfa-firestarter.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-processor/src/main/java/com/alfa/file_processor/kafka/FileConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-processor/src/main/java/com/alfa/file_processor/kafka/FileConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-uploader/src/main/java/com/alfa/file_uploader/controllers/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-uploader/src/main/java/com/alfa/file_uploader/controllers/UploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-uploader/src/main/java/com/alfa/file_uploader/http/StatusClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-uploader/src/main/java/com/alfa/file_uploader/http/StatusClient.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
     <projectState path="$PROJECT_DIR$/config-server">
       <ProjectState />
     </projectState>
@@ -45,7 +63,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/config-server/_config_cache" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -59,25 +77,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Misha/IdeaProjects/alfa-firestarter/config-server/settings.gradle.kts&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.alfa-firestarter [buildAll].executor": "Run",
+    "Makefile Target.build-test-all.executor": "Run",
+    "Makefile Target.start-all.executor": "Run",
+    "Makefile Target.start.executor": "Run",
+    "Makefile Target.test-all.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Misha/IdeaProjects/alfa-firestarter/settings.gradle.kts",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -88,19 +111,52 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.FileProcessorApplication">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="file-processor.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+  <component name="RunManager" selected="Makefile Target.start-all">
+    <configuration name="alfa-firestarter [buildAll]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildAll" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="file-processor.main" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="build-test-all" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="build-test-all" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="start-all" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="start-all" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="start" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="test-all" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="test-all" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
     </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="config-server.main" />
@@ -110,7 +166,7 @@
       </method>
     </configuration>
     <configuration name="FileProcessorApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="com.alfa.file-processor.file-processor.main" />
+      <module name="alfa-firestarter.file-uploader.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.alfa.file_uploader.FileProcessorApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -123,9 +179,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FileProcessorApplication (3)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="alfa-firestarter.file-processor.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.alfa.file_processor.FileProcessorApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FileProcessorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="file-uploader.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.alfa.file_uploader.FileProcessorApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileStatusProcessorApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="alfa-firestarter.file-status-processor.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.alfa.file_status_processor.FileStatusProcessorApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -158,6 +228,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Makefile Target.start-all" />
+        <item itemvalue="Makefile Target.start" />
+        <item itemvalue="Gradle.alfa-firestarter [buildAll]" />
+        <item itemvalue="Makefile Target.test-all" />
+        <item itemvalue="Makefile Target.build-test-all" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -188,7 +267,11 @@
       <workItem from="1755813244871" duration="5916000" />
       <workItem from="1755895248445" duration="709000" />
       <workItem from="1755895991354" duration="208000" />
-      <workItem from="1755896209397" duration="12644000" />
+      <workItem from="1755896209397" duration="12943000" />
+      <workItem from="1755980091236" duration="3436000" />
+      <workItem from="1756037764075" duration="3664000" />
+      <workItem from="1756125838542" duration="760000" />
+      <workItem from="1756127127557" duration="7893000" />
     </task>
     <servers />
   </component>

@@ -46,7 +46,9 @@ public class UploadController {
         final String fileHash = hashService.hash(file);
 
         String existingStatus = statusClient.getStatus(fileHash);
-
+        System.out.println("/////////////////////////////");
+        System.out.println(existingStatus);
+        System.out.println("/////////////////////////////");
         if (existingStatus != null) {
             return ResponseEntity
                     .status(HttpStatus.CONFLICT)

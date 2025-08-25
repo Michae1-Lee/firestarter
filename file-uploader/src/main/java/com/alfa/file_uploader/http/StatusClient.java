@@ -18,9 +18,12 @@ public class StatusClient {
     public String getStatus(String hash) {
         try {
             ResponseEntity<String> response =
-                    restTemplate.getForEntity("http://file-status-processor:8080/status/{hash}",
+                    restTemplate.getForEntity("http://localhost:8083/status/{hash}",
                             String.class,
                             hash);
+            System.out.println("respresprespresprespresprespresprespresp");
+            System.out.println(response);
+            System.out.println("respresprespresprespresprespresprespresp");
             return response.getBody();
         } catch (Exception e) {
             return null;

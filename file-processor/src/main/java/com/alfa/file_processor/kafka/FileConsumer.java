@@ -33,10 +33,8 @@ public class FileConsumer {
         try {
             validationService.validate(content);
             statusProducer.send(fileHash, "SECOND_VALIDATION_PASSED");
-        } catch (RuntimeException e) {
-            statusProducer.send(fileHash, "SECOND_VALIDATION_FAILED: " + e.getMessage());
         } catch (Exception e) {
-            statusProducer.send(fileHash, "SECOND_VALIDATION_FAILED: internal error");
+            statusProducer.send(fileHash, "SECOND_VALIDATION_FAILED");
         }
     }
 }

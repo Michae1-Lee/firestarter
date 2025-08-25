@@ -2,6 +2,15 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="alfa-firestarter.file-processor" target="17" />
+      <module name="alfa-firestarter.file-processor.main" target="17" />
+      <module name="alfa-firestarter.file-processor.test" target="17" />
+      <module name="alfa-firestarter.file-status-processor" target="17" />
+      <module name="alfa-firestarter.file-status-processor.main" target="17" />
+      <module name="alfa-firestarter.file-status-processor.test" target="17" />
+      <module name="alfa-firestarter.file-uploader" target="17" />
+      <module name="alfa-firestarter.file-uploader.main" target="17" />
+      <module name="alfa-firestarter.file-uploader.test" target="17" />
       <module name="alfa.config-server" target="17" />
       <module name="alfa.config-server.main" target="17" />
       <module name="alfa.config-server.test" target="17" />
